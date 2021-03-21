@@ -4,7 +4,7 @@
                   xmlns:tns="http://www.example.com/orderValidation/clientorders"
                   targetNamespace="http://www.example.com/orderValidation/clientorders">
     <wsdl:types>
-        <xsd:schema xmlns:xsd="http://www.w3.org/2001/XMLSchema" elementFormDefault="qualified" targetNamespace="http://www.turntabl.io/producer/clientOrders">
+        <xsd:schema xmlns:xsd="http://www.w3.org/2001/XMLSchema" elementFormDefault="qualified" targetNamespace="http://www.example.com/orderValidation/clientorders">
             <xsd:element name="OrderRequest">
                 <xsd:complexType>
                     <xsd:sequence>

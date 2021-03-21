@@ -1,7 +1,7 @@
 package com.example.client.connection.portfolio;
 
 import com.example.client.connection.Client.Client;
-import com.example.client.connection.order.Order;
+import com.example.client.connection.order.Orders;
 import com.fasterxml.jackson.annotation.JsonBackReference;
 import com.fasterxml.jackson.annotation.JsonIgnore;
 import lombok.*;
@@ -46,7 +46,7 @@ public class Portfolio {
     private LocalDateTime createdAt;
     @JsonIgnore
     @OneToMany(mappedBy = "portfolio")
-    private List<Order> orders;
+    private List<Orders> orders;
     @ManyToOne
     @JoinColumn(name="client_id")
     @JsonBackReference

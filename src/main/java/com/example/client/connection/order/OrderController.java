@@ -34,15 +34,15 @@ public class OrderController {
         ResponseData response = new ResponseData();
         if(client.getOrderStatus(request).isIsOrderValid()){
             if(portfolioService.getPortfolio((long) request.getPortfolioId())!=null){
-                Order order = new Order();
-                order.setStatus("OPEN");
-                order.setSide(request.getSide());
-                order.setProduct(request.getProduct());
-                order.setCreatedAt(LocalDateTime.now());
-                order.setPrice(request.getPrice());
-                order.setQuantity(request.getQuantity());
-                order.setPortfolio(portfolioService.getPortfolio((long) request.getPortfolioId()));
-                orderService.createOrders(order);
+                Orders orders = new Orders();
+                orders.setStatus("OPEN");
+                orders.setSide(request.getSide());
+                orders.setProduct(request.getProduct());
+                orders.setCreatedAt(LocalDateTime.now());
+                orders.setPrice(request.getPrice());
+                orders.setQuantity(request.getQuantity());
+                orders.setPortfolio(portfolioService.getPortfolio((long) request.getPortfolioId()));
+                orderService.createOrders(orders);
                 response.setCode(HttpStatus.CREATED.value());
                 response.setStatus("Created Successfully");
                 response.setData(client.getOrderStatus(request));

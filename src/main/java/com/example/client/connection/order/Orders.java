@@ -16,7 +16,7 @@ import java.time.LocalDateTime;
 @NoArgsConstructor
 @Table
 @Entity(name="orders")
-public class Order {
+public class Orders {
     @Id
     @SequenceGenerator(
             name= "order_sequence",

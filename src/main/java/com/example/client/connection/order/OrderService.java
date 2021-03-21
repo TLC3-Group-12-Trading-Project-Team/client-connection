@@ -12,7 +12,7 @@ public class OrderService {
         this.orderRepository = orderRepository;
     }
 
-    public void createOrders(Order orders){
+    public void createOrders(Orders orders){
         this.orderRepository.save(orders);
     }
 }
