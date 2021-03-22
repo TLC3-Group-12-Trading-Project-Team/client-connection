@@ -38,9 +38,9 @@ before_install:
 
 script:
 - docker-compose build --pull
-- docker tag tradingengine_trade-engine-prod:latest elijahahianyo/trade-project:trade-engine-prod
+- docker tag client-connection-prod:latest elijahahianyo/trade-project:client-connection-prod
 - docker image ls
-- docker push elijahahianyo/trade-project:trade-engine-prod
+- docker push elijahahianyo/trade-project:client-connection-prod
 - echo "DOCKER_PASSWORD=$DOCKER_PASSWORD" > .env
 - echo "DOCKER_USERNAME=$DOCKER_USERNAME" >> .env
 
