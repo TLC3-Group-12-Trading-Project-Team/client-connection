@@ -26,7 +26,7 @@ before_install:
 #- chmod 600 ~/.ssh/id_rsa
 #- ssh-add ~/.ssh/id_rsa
 - pip install --user awscli
-- chmod a+x gradlew
+- chmod a+x mvnw
 - export PATH=$PATH:$HOME/.local/bin
 - sudo rm /usr/local/bin/docker-compose
 - curl -L https://github.com/docker/compose/releases/download/${DOCKER_COMPOSE_VERSION}/docker-compose-`uname
