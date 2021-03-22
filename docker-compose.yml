@@ -1,0 +1,16 @@
+version: '2'
+services:
+  client-connection-prod:
+    container_name: client-connection-prod
+    build:
+      context: .
+      dockerfile: Dockerfile
+#    image: elijahahianyo/trade-project:trade-engine-prod
+    ports:
+      - 23000:23000
+    networks:
+      - trade_project
+
+networks:
+  trade_project:
+    external: true
