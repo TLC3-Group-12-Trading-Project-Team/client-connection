@@ -35,6 +35,7 @@ before_install:
 - sudo mv docker-compose /usr/local/bin
 - echo "$DOCKER_PASSWORD" | docker login -u "$DOCKER_USERNAME" --password-stdin
 
+
 script:
 - docker-compose build --pull
 - docker tag tradingengine_trade-engine-prod:latest elijahahianyo/trade-project:trade-engine-prod
