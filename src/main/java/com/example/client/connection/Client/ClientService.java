@@ -1,5 +1,6 @@
 package com.example.client.connection.Client;
 
+
 import com.example.client.connection.portfolio.Portfolio;
 import com.example.client.connection.portfolio.PortfolioRepository;
 import org.springframework.beans.factory.annotation.Autowired;
@@ -101,11 +102,12 @@ public class ClientService {
             }else{
                 response.setCode(HttpStatus.BAD_REQUEST.value());
                 response.setStatus("Login Failed");
+                response.setData(null);
                 HttpStatus.BAD_REQUEST.value();
             }
         }else{
             response.setCode(HttpStatus.UNAUTHORIZED.value());
-            response.setStatus("Unauthorized Failed");
+            response.setStatus("Invalid Email or Password");
             HttpStatus.UNAUTHORIZED.value();
         }
         return response;

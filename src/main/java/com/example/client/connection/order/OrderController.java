@@ -34,18 +34,8 @@ public class OrderController {
         ResponseData response = new ResponseData();
         if(client.getOrderStatus(request).isIsOrderValid()){
             if(portfolioService.getPortfolio((long) request.getPortfolioId())!=null){
-                Orders orders = new Orders();
-                orders.setStatus("OPEN");
-                orders.setSide(request.getSide());
-                orders.setProduct(request.getProduct());
-                orders.setCreatedAt(LocalDateTime.now());
-                orders.setPrice(request.getPrice());
-                orders.setQuantity(request.getQuantity());
-                orders.setPortfolio(portfolioService.getPortfolio((long) request.getPortfolioId()));
-                orderService.createOrders(orders);
                 response.setCode(HttpStatus.CREATED.value());
                 response.setStatus("Created Successfully");
-                response.setData(client.getOrderStatus(request));
             }else{
                 response.setCode(HttpStatus.BAD_REQUEST.value());
                 response.setStatus("Portflio does not exist");
