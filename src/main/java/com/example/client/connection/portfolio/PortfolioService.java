@@ -18,7 +18,7 @@ public class PortfolioService {
     ResponseData response = new ResponseData();
 
     @Autowired
-    public PortfolioService(PortfolioRepository portfolioRepository,ClientRepository clientRepository) {
+    public PortfolioService(PortfolioRepository portfolioRepository, ClientRepository clientRepository) {
         this.portfolioRepository = portfolioRepository;
         this.clientRepository = clientRepository;
     }
