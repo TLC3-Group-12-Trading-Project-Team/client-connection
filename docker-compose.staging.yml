@@ -1,0 +1,13 @@
+version: '2'
+services:
+  client-connection-prod:
+    container_name: client-connection-prod
+    image: elijahahianyo/trade-project:client-connection-prod
+    ports:
+      - 25000:25000
+    networks:
+      - trade_project
+
+networks:
+  trade_project:
+    external: true
