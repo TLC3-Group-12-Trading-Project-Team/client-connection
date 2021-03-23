@@ -35,4 +35,8 @@ public class ClientController {
         return this.clientService.getClient(clientId);
     }
 
+    @GetMapping(path = "/balance/{clientId}")
+    public Double getClientBalance(@PathVariable("clientId") Long clientId){
+        return this.clientService.clientBalance(clientId);
+    }
 }

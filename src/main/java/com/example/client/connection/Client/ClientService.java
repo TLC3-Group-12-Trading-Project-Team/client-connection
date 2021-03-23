@@ -90,27 +90,33 @@ public class ClientService {
 
     //login for the client
     public ResponseData loginClient(Client client) {
-        if(this.clientRepository.findClientByEmail(client.getEmail()).isPresent()){
+        if (this.clientRepository.findClientByEmail(client.getEmail()).isPresent()) {
             Client cl = this.clientRepository.findClientByEmail(client.getEmail()).orElse(null);
             String password = cl.getPassword();
-            if(encoder.matches(client.getPassword(), password)){
+            if (encoder.matches(client.getPassword(), password)) {
                 response.setCode(HttpStatus.OK.value());
                 HttpStatus.OK.value();
                 response.setStatus("Success");
                 cl.setPassword("");
                 response.setData(cl);
-            }else{
+            } else {
                 response.setCode(HttpStatus.BAD_REQUEST.value());
                 response.setStatus("Login Failed");
                 response.setData(null);
                 HttpStatus.BAD_REQUEST.value();
             }
-        }else{
+        } else {
             response.setCode(HttpStatus.UNAUTHORIZED.value());
             response.setStatus("Invalid Email or Password");
             HttpStatus.UNAUTHORIZED.value();
         }
         return response;
+    }
+
+    public double clientBalance(Long Id){
+        Client cl =  this.clientRepository.findById(Id).get();
+        return cl.getBalance();
+
     }
 }
 
