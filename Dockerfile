@@ -6,7 +6,13 @@ COPY .mvn .mvn
 COPY pom.xml .
 COPY src src
 
+RUN chmod +x ./mvnw
+# download the dependency if needed or if the pom file is changed
+RUN ./mvnw dependency:go-offline -B
+
+RUN ls -alh .
 RUN ./mvnw install -DskipTests
+#RUN ./mvnw install -DskipTests
 RUN mkdir -p target/dependency && (cd target/dependency; jar -xf ../*.jar)
 
 FROM openjdk:15-jdk-alpine
