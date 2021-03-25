@@ -116,7 +116,6 @@ public class ClientService {
     public double clientBalance(Long Id){
         Client cl =  this.clientRepository.findById(Id).get();
         return cl.getBalance();
-
     }
 }
 

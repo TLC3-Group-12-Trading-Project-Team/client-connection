@@ -41,10 +41,8 @@ public class Portfolio {
             updatable = false
     )
     private String name;
-    @JsonIgnore
     private String clientEmail;
     private LocalDateTime createdAt;
-    @JsonIgnore
     @OneToMany(mappedBy = "portfolio")
     private List<Orders> orders;
     @ManyToOne

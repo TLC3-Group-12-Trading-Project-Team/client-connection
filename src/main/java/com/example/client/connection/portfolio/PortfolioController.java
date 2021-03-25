@@ -6,6 +6,7 @@ import org.springframework.web.bind.annotation.*;
 
 import java.util.List;
 
+@CrossOrigin
 @RestController
 @RequestMapping(path = "portfolio")
 public class PortfolioController {
@@ -35,5 +36,12 @@ public class PortfolioController {
 //    public Response update(@PathVariable("id") Long id){
 //        return this.portfolioService.updatePortfolio(id);
 //    }
+
+    @GetMapping(path = "single/{id}")
+    public Portfolio single(@PathVariable("id") Long id){
+
+        return this.portfolioService.getSinglePortfolio(id);
+    }
+
 }
 
