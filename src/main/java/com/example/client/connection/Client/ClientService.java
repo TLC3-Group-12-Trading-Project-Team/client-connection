@@ -97,8 +97,6 @@ public class ClientService {
                 response.setCode(HttpStatus.OK.value());
                 HttpStatus.OK.value();
                 response.setStatus("Success");
-                cl.setPassword("");
-                response.setData(cl);
             } else {
                 response.setCode(HttpStatus.BAD_REQUEST.value());
                 response.setStatus("Login Failed");
