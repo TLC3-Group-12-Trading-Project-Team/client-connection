@@ -44,6 +44,8 @@ public class Orders {
 
     private String side;
 
+    private String action;
+
     @ManyToOne
     @JoinColumn(name="portfolio_id")
     @JsonBackReference

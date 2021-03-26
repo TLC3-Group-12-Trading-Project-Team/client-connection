@@ -42,7 +42,7 @@ public class ClientController {
     }
 
     @PostMapping(path = "/update-balance/{clientId}")
-    public void updateClientBalance(@PathVariable("clientId") Long clientId, double amount){
-        this.clientService.updateClientBalance(clientId, amount);
+    public void updateClientBalance(@PathVariable("clientId") Long clientId, @RequestBody double amount){
+        this.clientService.updateClientBalance(clientId,amount);
     }
 }
