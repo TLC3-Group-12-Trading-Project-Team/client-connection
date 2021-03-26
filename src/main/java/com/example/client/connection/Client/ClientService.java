@@ -97,9 +97,11 @@ public class ClientService {
                 response.setCode(HttpStatus.OK.value());
                 HttpStatus.OK.value();
                 response.setStatus("Success");
+                cl.setPassword("");
+                response.setData(cl);
             } else {
                 response.setCode(HttpStatus.BAD_REQUEST.value());
-                response.setStatus("Login Failed");
+                response.setStatus("Invalid Email or Password");
                 response.setData(null);
                 HttpStatus.BAD_REQUEST.value();
             }
@@ -111,9 +113,17 @@ public class ClientService {
         return response;
     }
 
+    //Getting client balance
     public double clientBalance(Long Id){
         Client cl =  this.clientRepository.findById(Id).get();
         return cl.getBalance();
+    }
+
+    //updating client balance
+    public void updateClientBalance(Long id, double amount){
+        Client client = this.clientRepository.findById(id).get();
+        client.setBalance(amount);
+        this.clientRepository.save(client);
     }
 }
 

@@ -82,6 +82,21 @@ public class AdminService {
         return response;
     }
 
+    public ResponseData changePassword(Admin admin){
+        Optional<Admin> foundAdmin = this.adminRepository.findAdminByEmail(admin.getEmail());
+        if (foundAdmin.isPresent()){
+          foundAdmin.get().setPassword(admin.getPassword());
+            response.setCode(HttpStatus.OK.value());
+            response.setStatus("success");
+            HttpStatus.OK.value();
+            this.adminRepository.save(admin);
+        }else{
+
+        }
+        return response;
+
+    }
+
     //Deleting an admin
     public void removeAdmin(Long id){
         this.adminRepository.deleteById(id);
