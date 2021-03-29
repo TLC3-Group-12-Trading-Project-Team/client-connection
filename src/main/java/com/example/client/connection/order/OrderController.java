@@ -46,4 +46,9 @@ public class OrderController {
         return response;
     }
 
+    @PutMapping("/updateClientBalance/{orderId}")
+    public void updateClientBalanceUsingOrderId(@PathVariable Long orderId, @RequestBody double amount){
+        this.orderService.updateClientOrderBalance(orderId, amount);
+    }
+
 }
