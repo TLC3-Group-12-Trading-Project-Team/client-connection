@@ -53,7 +53,7 @@
     </wsdl:binding>
     <wsdl:service name="ClientOrdersService">
         <wsdl:port binding="tns:ClientOrdersSoap11" name="ClientOrdersSoap11">
-            <soap:address location="http://18.193.123.168:47000/ws"/>
+            <soap:address location="http://18.159.170.1:47000/ws"/>
         </wsdl:port>
     </wsdl:service>
 </wsdl:definitions>

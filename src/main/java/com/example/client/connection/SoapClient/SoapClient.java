@@ -19,7 +19,7 @@ public class SoapClient {
 
     public OrderResponse getOrderStatus(OrderRequest request) {
         template = new WebServiceTemplate(marshaller);
-        OrderResponse response = (OrderResponse) template.marshalSendAndReceive("http://18.193.123.168:47000/ws",
+        OrderResponse response = (OrderResponse) template.marshalSendAndReceive("http://18.159.170.1:47000/ws",
                 request);
         return response ;
     }
