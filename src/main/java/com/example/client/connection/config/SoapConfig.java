@@ -10,7 +10,7 @@ public class SoapConfig {
     @Bean
     public Jaxb2Marshaller marshaller() {
         Jaxb2Marshaller marshaller=new Jaxb2Marshaller();
-        marshaller.setPackagesToScan("com.example.client.connection.clientOrders");
+        marshaller.setPackagesToScan("com.example.client.connection.ClientOrders");
         return marshaller;
     }
 
