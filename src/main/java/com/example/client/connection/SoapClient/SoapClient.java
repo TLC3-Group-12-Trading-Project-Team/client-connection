@@ -14,11 +14,12 @@ public class SoapClient {
     @Autowired
     private Jaxb2Marshaller marshaller;
 
+
     private WebServiceTemplate template;
 
     public OrderResponse getOrderStatus(OrderRequest request) {
         template = new WebServiceTemplate(marshaller);
-        OrderResponse response = (OrderResponse) template.marshalSendAndReceive("http://localhost:47000/ws",
+        OrderResponse response = (OrderResponse) template.marshalSendAndReceive("http://18.193.123.168:47000/ws",
                 request);
         return response ;
     }
